@@ -1,4 +1,6 @@
 ---
-profile_name:
+development:
 - source: .vimrc
-  target: target_path/.vimrc
+  target: /Users/marco/.vimrc
+- source: .bash_profile
+  target: /Users/marco/.bash_profile
