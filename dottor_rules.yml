@@ -7,7 +7,10 @@ development:
   target: /Users/marco/.bash_profile
 
 - source: 'SublimeText2/Default\ \(OSX\).sublime-keymap'
-  target: /Users/marco/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap
+  target: '/Users/marco/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap'
 
 - source: 'SublimeText2/Preferences.sublime-settings'
-  target: /Users/marco/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+  target: '/Users/marco/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings'
+
+- source: .gemrc
+  target: /Users/marco/.gemrc
