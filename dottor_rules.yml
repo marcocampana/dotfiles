@@ -14,3 +14,6 @@ development:
 
 - source: .gemrc
   target: /Users/marco/.gemrc
+
+- source: .tmux.conf
+  target: /Users/marco/.tmux.conf
