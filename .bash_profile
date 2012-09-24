@@ -47,7 +47,8 @@ alias sdbc='script/dbconsole development -p'
 
 # rails 3.x aliases
 alias rs='rails s'
-alias rc='rails c'
+alias rs='rails s'
+alias be='bundle exec'
 
 # Rspec
 alias r='rspec'
@@ -82,18 +83,10 @@ function prompt_style {
 
 prompt_style
 
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/usr/local/Cellar/postgresql/9.0.1/bin:$PATH
-
 export PGDATA=/usr/local/var/postgres
-
 export PATH=~/.gem/ruby/1.8/bin:$PATH
-export PATH=~/sdks/android-sdk-mac_86/tools:$PATH
-
 export PATH=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/:$PATH
-
-export MANPATH=/opt/local/share/man:$MANPATH
 
 # rvm-install added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
