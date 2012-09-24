@@ -8,20 +8,24 @@ call vundle#rc()
  " required!
  Bundle 'gmarik/vundle'
 
- " My Bundles here:
- "
- " original repos on github
  Bundle 'tpope/vim-fugitive'
  Bundle 'Lokaltog/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  Bundle 'tpope/vim-rails.git'
- " vim-scripts repos
  Bundle 'L9'
  Bundle 'FuzzyFinder'
  Bundle 'vividchalk.vim'
- " non github repos
- Bundle 'git://git.wincent.com/command-t.git'
- " ...
+ Bundle 'scrooloose/nerdcommenter'
+ Bundle 'tsaleh/vim-align'
+ Bundle 'ervandew/supertab'
+ Bundle 'kien/ctrlp.vim'
+ Bundle 'Lokaltog/vim-powerline'
+ Bundle 'tpope/vim-haml'
+ Bundle 'kchmck/vim-coffee-script'
+ Bundle 'nanotech/jellybeans.vim'
+ Bundle 'bbommarito/vim-slim'
+ Bundle "ack.vim"
+ Bundle "The-NERD-tree"
 
  filetype plugin indent on     " required!
  "
@@ -51,6 +55,10 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
+set colorcolumn=+3,+4,+5     " highlight column after 'textwidth'
+"set colorcolumn=+1,+2  " highlight two columns after 'textwidth'
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
 set list
 " set listchars=tab:>-,eol:$
 set listchars=tab:>-
@@ -64,11 +72,22 @@ set backup                 " Enable creation of backup file.
 set backupdir=~/.vim/backups " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.
 
+let g:fullscreen_colorscheme = "iawriter"
+let g:fullscreen_font = "Cousine:h14"
+let g:normal_colorscheme = "jellybeans"
+let g:normal_font="Inconsolata:h14"
+
+colorscheme jellybeans
 " colorscheme vividchalk
 " colorscheme desert
 " colorscheme github
 highlight comment ctermfg=darkgreen
 hi Cursor guifg=#000000 guibg=#888888
+
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
 autocmd BufRead *.ru set filetype=ruby
 autocmd BufRead *.feature set filetype=ruby
@@ -97,14 +116,14 @@ autocmd BufRead,BufNewFile,InsertLeave * redraw!
 map ,cd :cd %:p:h<CR>
 
 " --- mappings ---
-map <Leader>b :BufExplorer<CR>
-map <Leader>f :Find<space>
+"map <Leader>b :BufExplorer<CR>
+"map <Leader>f :Find<space>
 map <Leader>n :NERDTreeToggle<CR>
-" map <Leader>t :tabnew<CR>
+"map <Leader>t :tabnew<CR>
 
 " --- Window control ---
-map <silent> <unique> + <C-w>+
-map <silent> <unique> - <C-w>-
+"map <silent> <unique> + <C-w>+
+"map <silent> <unique> - <C-w>-
 
 " --- Erlang ---
 map <Leader>gf :0r ~/.vim/templates/gen_server_template.full<CR>:set filetype=erlang<CR>
