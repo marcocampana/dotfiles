@@ -17,3 +17,6 @@ development:
 
 - source: .tmux.conf
   target: ~/.tmux.conf
+
+- source: .powconfig
+  target: ~/.powconfig
