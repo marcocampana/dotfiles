@@ -1,4 +1,5 @@
 {
+	"auto_complete_commit_on_tab": false,
 	"color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
 	"draw_indent_guides": true,
 	"ensure_newline_at_eof_on_save": true,
@@ -9,13 +10,17 @@
 	[
 		"Vintage"
 	],
+	"margin": 1,
+	"phoenix_color_expanded_folder": true,
+	"phoenix_dirty_bottom_bar": true,
+	"phoenix_dirty_bottom_bar_red": true,
+	"phoenix_solid_current_tab": true,
+	"phoenix_tabs_small": true,
 	"rulers":
 	[
 		80
 	],
 	"tab_size": 2,
-	"theme": "Soda Dark.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"auto_complete_commit_on_tab": false,
-	"margin": 1
+	"theme": "Phoenix Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
 }
