@@ -1,49 +1,39 @@
-syntax on                 " Enable syntax highlighting
-
+syntax on
 filetype off
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
- " required!
- Bundle 'gmarik/vundle'
-
- Bundle 'tpope/vim-fugitive'
- Bundle 'Lokaltog/vim-easymotion'
- Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- Bundle 'tpope/vim-rails.git'
- Bundle 'L9'
- Bundle 'FuzzyFinder'
- Bundle 'vividchalk.vim'
- Bundle 'scrooloose/nerdcommenter'
- Bundle 'tsaleh/vim-align'
- Bundle 'ervandew/supertab'
- Bundle 'kien/ctrlp.vim'
- Bundle 'Lokaltog/vim-powerline'
- Bundle 'tpope/vim-haml'
- Bundle 'kchmck/vim-coffee-script'
- Bundle 'nanotech/jellybeans.vim'
- Bundle 'bbommarito/vim-slim'
- Bundle "ack.vim"
- Bundle "The-NERD-tree"
-
- filetype plugin indent on     " required!
- "
- " Brief help
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
- "
- " see :h vundle for more details or wiki for FAQ
- " NOTE: comments after Bundle command are not allowed..
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'vividchalk.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tsaleh/vim-align'
+Bundle 'ervandew/supertab'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-haml'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'bbommarito/vim-slim'
+Bundle "ack.vim"
+Bundle "The-NERD-tree"
+Bundle "genutils"
+"Bundle "buffergator"
+Bundle "surround.vim"
+Bundle "YankRing.vim"
+filetype plugin indent on     " required!
 
 set autoread
 set number
 set smartindent
 set nobackup
 set incsearch
-" set hlsearch
+set hlsearch
 set wrapscan
 set smartcase ignorecase
 set showcmd
@@ -72,15 +62,8 @@ set backup                 " Enable creation of backup file.
 set backupdir=~/.vim/backups " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.
 
-let g:fullscreen_colorscheme = "iawriter"
-let g:fullscreen_font = "Cousine:h14"
-let g:normal_colorscheme = "jellybeans"
-let g:normal_font="Inconsolata:h14"
-
 colorscheme jellybeans
-" colorscheme vividchalk
-" colorscheme desert
-" colorscheme github
+
 highlight comment ctermfg=darkgreen
 hi Cursor guifg=#000000 guibg=#888888
 
@@ -100,8 +83,6 @@ augroup mkd
   autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
-runtime! macros/matchit.vim
-
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -112,40 +93,24 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd BufRead,BufNewFile,ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufRead,BufNewFile,InsertLeave * redraw!
 
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 map ,cd :cd %:p:h<CR>
 
 " --- mappings ---
-"map <Leader>b :BufExplorer<CR>
-"map <Leader>f :Find<space>
+
+" --- NerdTree ---
 map <Leader>n :NERDTreeToggle<CR>
-"map <Leader>t :tabnew<CR>
+
+" --- CtrlP ---
+map <C-t> :CtrlP<CR>
 
 " --- Window control ---
 "map <silent> <unique> + <C-w>+
 "map <silent> <unique> - <C-w>-
 
-" --- Erlang ---
-map <Leader>gf :0r ~/.vim/templates/gen_server_template.full<CR>:set filetype=erlang<CR>
-map <Leader>gm :0r ~/.vim/templates/gen_server_template.mini<CR>:set filetype=erlang<CR>
-
 " --- Rspec ---
-map <Leader>ofs :%s/ it / xit <CR>''?xit<CR>x:w<CR>
-map <Leader>ons :%s/ xit / it /<CR>'':w<CR>
 
 " --- Align ---
 
-" From inside a hash, autoindents, then aligns on =>
-nmap <silent> <Leader>ih <ESC>:AlignPush<CR>:AlignCtrl lp1P1l<CR>mmviB:Align =><CR>:AlignPop<CR>'mvaB=
-
-" Autoformats a single line hash
-nmap <Leader>fh <ESC>^:s/{/{\r/<CR>:s/}$/\r}<CR>vaB:s/\v,\s*:/,\r:/g<CR><Leader>ih
-
-" Aligns visual block on =
-vmap <silent> <Leader>i= <ESC>:AlignPush<CR>:AlignCtrl lp1P1l<CR>:'<,'>Align =<CR>:AlignPop<CR>
-
-" Aligns visual block on ,
-vmap <silent> <Leader>i, <ESC>:AlignPush<CR>:AlignCtrl lp0P1l<CR>:'<,'>Align ,<CR>:AlignPop<CR>
-
-" Aligns visual block on (
-vmap <silent> <Leader>i( <ESC>:AlignPush<CR>:AlignCtrl lp0P0l<CR>:'<,'>Align (<CR>:AlignPop<CR>
