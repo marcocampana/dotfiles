@@ -66,10 +66,6 @@ __ruby_version() {
   ruby -v|cut -f 2 -d ' '
 }
 
-__rvm_gemset() {
-  rvm gemset name
-}
-
 function prompt_style {
   local BLUE="\[\033[3;36m\]"
   local YELLOW="\[\033[0;33m\]"
@@ -78,7 +74,7 @@ function prompt_style {
   local LIGHT_GREEN="\[\033[1;32m\]"
   local WHITE="\[\033[0;37m\]"
 
-  PS1="  $WHITE[\$(date +%H:%M:%S)] $YELLOW(ruby \$(__ruby_version)@\$(__rvm_gemset))$YELLOW\n→ $BLUE\w $LIGHT_RED\$(__parse_git_branch)$WHITE "
+  PS1="  $WHITE[\$(date +%H:%M:%S)] $YELLOW(ruby \$(__ruby_version))$YELLOW\n→ $BLUE\w $LIGHT_RED\$(__parse_git_branch)$WHITE "
 }
 
 prompt_style
@@ -88,6 +84,9 @@ export PGDATA=/usr/local/var/postgres
 export PATH=~/.gem/ruby/1.8/bin:$PATH
 export PATH=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/:$PATH
 
-# rvm-install added line:
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+
+export RBENV_ROOT=/usr/local/opt/rbenv
+
+# rbenv - enable shims and autocompletion
+eval "$(rbenv init -)"
 
