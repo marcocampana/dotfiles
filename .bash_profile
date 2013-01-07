@@ -79,11 +79,8 @@ function prompt_style {
 
 prompt_style
 
-export PATH=/usr/local/Cellar/postgresql/9.0.1/bin:$PATH
-export PGDATA=/usr/local/var/postgres
-export PATH=~/.gem/ruby/1.8/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/:$PATH
-
 
 export RBENV_ROOT=/usr/local/opt/rbenv
 
