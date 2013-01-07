@@ -79,10 +79,11 @@ function prompt_style {
 
 prompt_style
 
+export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/Cellar/postgresql/9.0.1/bin:$PATH
 export PGDATA=/usr/local/var/postgres
 export PATH=~/.gem/ruby/1.8/bin:$PATH
-export PATH=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/:$PATH
+export PATH=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources:$PATH
 
 
 export RBENV_ROOT=/usr/local/opt/rbenv
@@ -90,3 +91,6 @@ export RBENV_ROOT=/usr/local/opt/rbenv
 # rbenv - enable shims and autocompletion
 eval "$(rbenv init -)"
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
