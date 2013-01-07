@@ -87,3 +87,6 @@ export RBENV_ROOT=/usr/local/opt/rbenv
 # rbenv - enable shims and autocompletion
 eval "$(rbenv init -)"
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
