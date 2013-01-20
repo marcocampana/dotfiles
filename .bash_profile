@@ -6,11 +6,12 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 
 # Ruby performance
-export RUBY_HEAP_MIN_SLOTS=800000
-export RUBY_HEAP_FREE_MIN=100000
-export RUBY_HEAP_SLOTS_INCREMENT=300000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=79000000
+export RUBY_HEAP_MIN_SLOTS=600000
+export RUBY_HEAP_SLOTS_INCREMENT=10000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.8
+export RUBY_GC_MALLOC_LIMIT=59000000
+export RUBY_HEAP_FREE_MIN=100000000000
+export RUBY_FREE_MIN=500000
 
 alias ls='ls -G'
 alias ..='cd ..'
@@ -79,6 +80,7 @@ function prompt_style {
 
 prompt_style
 
+export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/:$PATH
 
