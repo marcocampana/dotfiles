@@ -1,21 +1,17 @@
 {
 	"auto_complete_commit_on_tab": false,
-	// "color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
-	// "color_scheme": "Packages/TextMate-Themes/Tubster.tmTheme",
-	// "color_scheme": "Packages/TextMate-Themes/TomorrowNight.tmTheme",
-	"color_scheme": "Packages/TextMate-Themes/Marco.tmTheme",
-	// "color_scheme": "Packages/TextMate-Themes/TomorrowNightBright.tmTheme",
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
 	"draw_indent_guides": true,
 	"ensure_newline_at_eof_on_save": true,
 	"fold_buttons": false,
 	"font_size": 12.0,
-	// "font_face": "Menlo",
 	"highlight_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
 	"margin": 1,
+	"overlay_scroll_bars": "enabled",
 	"phoenix_color_expanded_folder": true,
 	"phoenix_dirty_bottom_bar": true,
 	"phoenix_dirty_bottom_bar_red": true,
@@ -28,5 +24,5 @@
 	"tab_size": 2,
 	"theme": "Phoenix Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"overlay_scroll_bars": "enabled"
+	"trim_trailing_white_space_on_save": true
 }
