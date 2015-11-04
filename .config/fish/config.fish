@@ -25,4 +25,4 @@ alias rc='rails c'
 alias rs='rails s'
 alias be='bundle exec'
 
-rvm default
+source ~/.profile
